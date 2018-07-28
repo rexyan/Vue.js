@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <component :is='current_com'></component>
+    <button @click="change_com('A')"> 切换为组件A</button>
+    <button @click="change_com('B')"> 切换为组件B</button>
+    <button @click="change_com('C')"> 切换为组件C</button>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            current_com: 'A'
+        },
+        components: {
+            'A': {
+                template: '<div> 组件A </div>'
+            },
+            'B': {
+                template: '<div> 组件B </div>'
+            },
+            'C': {
+                template: '<div> 组件C </div>'
+            }
+        },
+        methods: {
+            change_com: function (com) {
+                this.current_com = com
+            }
+        }
+    })
+</script>
+</body>
+</html>

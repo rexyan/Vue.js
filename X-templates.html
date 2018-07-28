@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <child-component></child-component>
+    <script type="text/x-templates" id="child-component-template">
+        <div> 组件中的内容，使用了x-templates</div>
+    </script>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {},
+        components: {
+            'child-component': {
+                // x-templates的作用就是可以将template的内容写在script中，这样更直观
+                template: '#child-component-template'
+            }
+        }
+    })
+</script>
+</body>
+</html>

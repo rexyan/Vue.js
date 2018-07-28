@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <child-component></child-component>
+</div>
+
+<script>
+    Vue.component('child-component', function (resolve, reject) {
+        for (var i = 1; i < 10000; i++) {
+            console.log('执行时间')
+        }
+        resolve({
+            template: '<div>异步加载出来的内容</div>',
+        })
+    });
+    new Vue({
+        el: '#app',
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <zujian-name inline-template>
+        <div>
+            <h2>在父组件中定义子组件的模版</h2>
+            <p> {{ message }} </p>
+            <p> {{ msg }} </p>
+        </div>
+    </zujian-name>
+</div>
+
+<script>
+
+    Vue.component('zujian-name', {
+        data: function () {
+            return {
+                'msg': 'msg',
+
+            }
+        }
+    });
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            'message': '1111'
+        }
+    })
+</script>
+</body>
+</html>
